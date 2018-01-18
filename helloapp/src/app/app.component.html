@@ -1,0 +1,26 @@
+
+<h1>
+  {{title}}
+</h1>
+<h2>Employee Records</h2>
+<h4>Selected records</h4>
+<h3>Name:<span style="color:green;font-size:18px">
+  {{selectedEmployeeData.selectedName}}</span></h3>
+<h3>City:<span style="color:burlywood;font-size: 18px">
+  {{selectedEmployeeData.selectedCity}}</span></h3>
+<h3>City:<span style="color:grey;font-size: 18px">
+  {{selectedEmployeeData.selectedSalary}}</span></h3>
+
+
+<datacomponent
+  [name]="employee.eName"
+  [city]="employee.eCity"
+  [salary]="employee.eSalary"
+  (sendRecord)="getRecord($event)"
+  *ngFor="let employee of employeeRecord">
+  The employee records gets displayes here
+</datacomponent>
+
+<!--
+<app-contactform></app-contactform>
+-->

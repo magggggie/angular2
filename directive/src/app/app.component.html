@@ -1,0 +1,35 @@
+<!--
+<h1>
+  {{title}}
+</h1>
+<ul>
+  <li [class.active]="viewMode=='map' ">
+    <a (click)="viewMode='map' ">Map View</a></li>
+  <li [class.active]="viewMode=='list' ">
+    <a (click)="viewMode='list' ">list View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase=" 'map'">Map View Content</div>
+  <div *ngSwitchCase=" 'list'">list View Content</div>
+  <div *ngSwitchDefault>Otherwise</div>
+</div>
+-->
+
+<!-- ngfor -->
+
+<button (click)="onAdd()">Add</button>
+
+<button (click)="onLoad()">Load</button>
+<ul>
+  <li *ngFor="let course of courses; let i=index">
+    {{i}}--{{course.name}}
+    <button (click)="onRemove(course)">Remove</button>
+    <button (click)="onChange(course)">Change</button>
+
+  </li>
+  <li *ngFor="let course of courses; let e=even;">
+    {{course.name}} <span *ngIf="e">(Even)</span>
+  </li>
+</ul>
+
